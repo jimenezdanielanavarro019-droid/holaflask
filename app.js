@@ -6,7 +6,7 @@ function enviar() {
     var url = '';
 
     if (document.querySelector('#opcion1').checked) {
-        url = 'http://127.0.0.1:5000';
+        url = 'http://127.0.0.1:5000/mensaje';
     } else if (document.querySelector('#opcion2').checked) {
         url = 'http://127.0.0.1:5000/notas/' + v1 + '/' + v2 + '/' + v3;
     } else if (document.querySelector('#opcion3').checked) {

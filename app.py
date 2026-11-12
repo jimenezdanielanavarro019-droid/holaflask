@@ -1,5 +1,5 @@
 ## Importamos flask
-from flask import Flask
+from flask import Flask, send_from_directory
 import numpy as np
 from flask_cors import CORS
 
@@ -10,7 +10,18 @@ CORS(app)
 ## Definimos la ruta principal
 @app.route("/")
 def HolaFlask():
+    return send_from_directory(app.root_path, "index.html")
+
+
+@app.route("/app.js")
+def javascript():
+    return send_from_directory(app.root_path, "app.js")
+
+
+@app.route("/mensaje")
+def mensaje():
     return "<h1>¡Hola Flask!</h1> <hr>"
+
 
 @app.route("/notas")
 @app.route("/notas/<float:nota1>/<float:nota2>/<float:nota3>")
